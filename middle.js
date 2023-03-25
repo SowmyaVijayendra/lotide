@@ -23,17 +23,18 @@ function assertArraysEqual(arr1, arr2){
   console.log(`🛑🛑🛑 ${arr1} and ${arr2} are not equal`) 
 }
 
-function without(source, itemsToRemove){
-  let cleaned = [];
-  let removeList= [];
-  removeList =itemsToRemove;
-  for(let i of source){
-    if(!removeList.includes(i)){     
-      cleaned.push(i);      
+function middle(arr){
+  let middleArray=[];
+  if(arr && arr.length > 2 ){
+    if(arr.length % 2 === 0){
+      middleArray.push(arr[arr.length/2] - 1);
+      middleArray.push(arr[(arr.length/2)]);
     }
-      
+    else
+      middleArray.push(arr[Math.floor(arr.length/2)]);
   }
-  return cleaned;
+  return middleArray;
 }
-
-
+// TEST CODE
+assertArraysEqual(middle([1, 2, 3]), [2]);
+assertArraysEqual(middle([1,2,3,4,5,6], []), [3,4]);
