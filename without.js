@@ -35,17 +35,21 @@ function without(source, itemsToRemove){
   }
   return cleaned;
 }
+function flatten(parentArray){
+  let result=[];
+  for(let item of parentArray){
+    if(Array.isArray(item)){
+      for(let item1 of item){
+        result.push(item1);
+      }
+    }
+    else
+      result.push(item);
+  }
+   return result;
+}
 
 // TEST CODE
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1,2,3,4,5,6]);
+assertArraysEqual(flatten([1,2,3,4], []), [1,2,3,4]);
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-
-
-assertArraysEqual(without([1,2,3,4], [2,3]), [1,4]);
-assertArraysEqual(without([1,2,3,4], []), [1,2,3,4]);
-assertArraysEqual(without([1,2,3,4], [5,6]), [1,2,3,4]);
-assertArraysEqual(without([1,2,3,4], [1,2,3,4]), []);
-assertArraysEqual(without([1,2,3,4], ["1","2"]), [1,2,3,4]);
