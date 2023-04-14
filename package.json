@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@sowmyavijayendra/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mini version of lodash",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/SowmyaVijayendra/lotide.git"
   },
-  "author": "",
+  "author": "SowmyaVijayendra",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SowmyaVijayendra/lotide/issues"
