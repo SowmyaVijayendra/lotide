@@ -1,4 +1,4 @@
-
+//finds middle element of an array
 function middle(arr){
   let middleArray=[];
   if(arr && arr.length > 2 ){
